@@ -1,33 +1,62 @@
 import { useState } from "react"
 
+type Datatype = {
+    name : string , 
+    age : string , 
+    email : string , 
+
+}
 const Contanct = () => {
-    const [data , setData] = useState({
+    const[items , setItems] = useState<Datatype[]>([])
+    const[data , setData] = useState<Datatype>({
         name : '',
+        age : '', 
         email : ''
     })
-    const{name , value} = e.target
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>{
+        const{name , value} = e.target;
+        setData((prev) =>({
+             ...prev , [name] : value
+        }))
+    }
+    const handleSubmit = () =>{
+          setItems((prev) =>[
+              ...prev , {...data}
+          ])
+          setData({name : '' , age : '' , email: ''})
+    }
+    const handleDelete = (index : number) =>{
+            setItems(items.filter((_, i) => i !== index)) 
+    }
   return (
     <div>
-        <form>
-            <label>
-                Name:
-                <input
-                 name="name"
-                  type="text"
-                  value={data.name}/>
-            </label>
-            <label>
-                Email:
-                <input
-                name="email"
-                type="text"
-                value={data.email}/>
-            </label>
-        </form>
-        <div>
-            <h1>NAme : {data.name}</h1>
-            <h1>Email:{data.email}</h1>
-        </div>
+         <label>
+            Enter Name : 
+            <input type="text" value={data.name} onChange={handleChange} name="name"/>
+         </label>
+         <label>
+            Enter Age : 
+            <input type="text" value={data.age} onChange={handleChange} name="age"/>
+         </label>
+         <label>
+            Enter Email : 
+            <input type="text" value={data.email} onChange={handleChange} name="email"/>
+         </label>
+         <button onClick={handleSubmit}>Submit</button>
+
+         <div>
+            {
+                items.map((m , index) =>(
+                    <ul key={index}>
+                        <li>{m.name}</li>
+                        <li>{m.age}</li>
+                        <li>{m.email}</li>
+                        <button onClick={() => handleDelete(index)}>X</button>
+                    </ul>
+                ))
+            }
+         </div>
     </div>
   )
 }
