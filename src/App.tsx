@@ -6,6 +6,7 @@ import Profile from './Profile'
 import Form from './Form'
 import Focus from './Focus'
 import Contanct from './Contanct'
+import Switch from './Switch'
 
 const App = () => {
   return (
@@ -13,7 +14,8 @@ const App = () => {
        {/* <Profile/> */}
        {/* <Todo/> */}
        {/* <Form/> */}
-       <Contanct/>
+       {/* <Contanct/> */}
+       <Switch/>
     </div>
   )
 }
