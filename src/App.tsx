@@ -7,6 +7,8 @@ import Form from './Form'
 import Focus from './Focus'
 import Contanct from './Contanct'
 import Switch from './Switch'
+import Contanct2 from './Contanct2'
+import EventHandling from './EventHandling'
 
 const App = () => {
   return (
@@ -15,7 +17,10 @@ const App = () => {
        {/* <Todo/> */}
        {/* <Form/> */}
        {/* <Contanct/> */}
-       <Switch/>
+       {/* <Switch/> */}
+       {/* <Focus/> */}
+       {/* <Contanct2/> */}
+       <EventHandling/>
     </div>
   )
 }

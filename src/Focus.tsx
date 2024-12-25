@@ -1,18 +1,18 @@
 import { useRef } from "react"
 
-
 const Focus = () => {
-    const inputRef =  useRef<HTMLInputElement>(null)
-    const handleClick = () =>{
-        inputRef.current?.focus()
-    }
+  const InputRef = useRef<HTMLInputElement>(null)
+  const handleChange = () =>{
+      InputRef.current?.focus()
+  }
   return (
     <div>
-        <input
-          type="text"
-          ref={inputRef}
-          placeholder="Click button to focus"/>
-          <button onClick={handleClick}>Focus</button>
+      <input
+       type="text"
+       placeholder="Click me to focus"
+       ref={InputRef}
+       />
+     <button onClick={handleChange}>Focus</button>
     </div>
   )
 }
