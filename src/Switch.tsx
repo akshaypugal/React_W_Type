@@ -3,9 +3,9 @@ import Form from "./Form"
 import UserProfile from "./UserProfile"
 
 const Switch = () => {
-    const[compo , setCompo] = useState<string>('a')
+    const[compo , setCompo] = useState<'a'|'b'|'c'>('a')
 
-    const handletoggle = (componet) =>{
+    const handletoggle = (componet:'a'|'b'|'c') =>{
         setCompo(componet)
     }
   return (
