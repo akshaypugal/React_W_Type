@@ -1,9 +1,10 @@
-import UseReducer from "./UseReducer"
+import Form from "./Form"
+
 
 const App = () => {
   return (
     <div>
-      <UseReducer/>
+      <Form/>
     </div>
   )
 }
