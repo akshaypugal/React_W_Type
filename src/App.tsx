@@ -1,10 +1,11 @@
-import Form from "./Form"
+import AdvanceForm from "./AdvanceForm"
+
 
 
 const App = () => {
   return (
     <div>
-      <Form/>
+      <AdvanceForm/>
     </div>
   )
 }
